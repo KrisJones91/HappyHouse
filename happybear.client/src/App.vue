@@ -6,8 +6,8 @@
     <router-view />
   </main>
   <footer>
-    <div class="bg-primary text-light text-center p-4">
-      Spreading good vibes and love wherever you go.
+    <div class="bg-primary text-light text-center p-2 f-text">
+      <small>Make someone's day. Spread the happy, wherever you go.</small>
     </div>
   </footer>
 </template>
@@ -26,5 +26,7 @@ export default {
 </script>
 <style lang="scss">
 @import "./assets/scss/main.scss";
-
+.f-text{
+  font-family: 'Dancing Script', cursive;
+}
 </style>
