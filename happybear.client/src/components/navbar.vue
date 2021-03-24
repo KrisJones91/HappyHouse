@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-expand-lg bg-dark">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <router-link class="navbar-brand d-flex" :to="{ name: 'Home' }">
       <div class="d-flex flex-column align-items-center">
         <img
@@ -22,12 +22,12 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
+        <li class="nav-item text-white">
           <router-link :to="{ name: 'Home' }" class="nav-link">
             Home
           </router-link>
         </li>
-        <li class="nav-item">
+        <li class="nav-item text-white">
           <router-link :to="{ name: 'About' }" class="nav-link">
             About
           </router-link>
@@ -45,7 +45,6 @@
         <div class="dropdown" v-else>
           <div
             class="dropdown-toggle"
-            style="color=#1815CE"
             @click="state.dropOpen = !state.dropOpen"
           >
             <img
@@ -124,9 +123,5 @@ a:hover {
 }
 .nav-item .nav-link.router-link-exact-active{
   color: var(#1815CE);
-}
-.navbar-toggler-icon{
-  /* background-color: #9898a1; */
-  color: #1815CE !important;
 }
 </style>

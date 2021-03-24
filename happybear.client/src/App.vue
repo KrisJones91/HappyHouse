@@ -6,8 +6,8 @@
     <router-view />
   </main>
   <footer>
-    <div class="bg-dark text-light text-center p-4">
-      Made by Kris Jones
+    <div class="bg-primary text-light text-center p-4">
+      Spreading good vibes and love wherever you go.
     </div>
   </footer>
 </template>
