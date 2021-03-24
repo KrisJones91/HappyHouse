@@ -1,0 +1,15 @@
+
+  {
+    "name": "happybear",
+    "version": "1.0.0",
+    "scripts": {
+      "build": "npm run setup:client && npm run setup:server",
+      "setup:client": "cd happybear.client && npm i",
+      "setup:server": "cd happybear.server && npm i",
+      "start": "node happybear.server/index.js"
+    },
+    "engines": {
+      "node": "^14.15.4"
+    }
+  }
+  
