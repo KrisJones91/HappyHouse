@@ -4,6 +4,7 @@ import { audience, clientId, domain } from '../AuthConfig'
 import router from '../router'
 import { setBearer } from './AxiosService'
 import { accountService } from './AccountService'
+import { postsService } from './PostsService'
 
 export const AuthService = initialize({
   domain,
@@ -23,4 +24,5 @@ AuthService.on(AuthService.AUTH_EVENTS.AUTHENTICATED, async function() {
   AppState.user = AuthService.user
   await accountService.getAccount()
   // NOTE if there is something you want to do once the user is authenticated, place that here
+  await postsService.getPosts()
 })
