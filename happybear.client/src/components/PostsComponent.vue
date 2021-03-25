@@ -1,19 +1,8 @@
 <template>
   <div class="posts-component">
-    <div class="masonry">
-      <div class="item card m-3">
-        <div class="card-header">
-          <h3>{{ postProp.creator.name }}</h3>
-        </div>
-        <div class="card-body">
-          <p><b>{{ postProp.title }}</b></p>
-          {{ postProp.body }}
-        </div>
-        <div class="card-footer">
-          {{ postProp.creator.name }}
-        </div>
-        <!-- <p>{{ postProp }}</p> -->
-      </div>
+    <div class="col text-left card">
+      <p><b>{{ postProp.creator.name }}</b></p>
+      <p>{{ postProp.body }}</p>
     </div>
   </div>
 </template>

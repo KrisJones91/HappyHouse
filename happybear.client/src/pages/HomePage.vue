@@ -1,7 +1,17 @@
 <template>
   <div class="home container-fluid">
-    <div class="row justify-content-center">
-      <PostsComponent v-for="post in state.posts" :key="post.id" :post-prop="post" />
+    <div class="row justify-content-center m-0">
+      <div class="col-3">
+        <img :src="state.user.picture" class="p-2" alt="">
+        <h4>{{ state.user.nickname }}</h4>
+        <p>{{ state.user.email }}</p>
+      </div>
+      <div class="col-6">
+        <PostsComponent v-for="post in state.posts" :key="post.id" :post-prop="post" />
+      </div>
+      <div class="col">
+        <h4>Notifications</h4>
+      </div>
     </div>
   </div>
 </template>
