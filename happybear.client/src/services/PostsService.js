@@ -9,8 +9,9 @@ class PostsService {
 
   async createPost(post) {
     const res = await api.post('api/posts', post)
-    AppState.posts.push(...res.data)
+    AppState.posts.push(res.data, post)
     this.getPosts()
+    return res.data
   }
 }
 export const postsService = new PostsService()

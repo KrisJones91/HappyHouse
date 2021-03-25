@@ -7,7 +7,7 @@
         <p>{{ state.user.email }}</p>
       </div>
       <div class="col-11 col-md-6 mt-4">
-        <form type="submit" @submit.prevent="createPost">
+        <form type="submit" @submit.prevent="createPost()">
           <div class="form-group m-2">
             <input type="text"
                    class="form-control"
@@ -51,7 +51,6 @@ export default {
       user: computed(() => AppState.user),
       posts: computed(() => AppState.posts),
       newPost: {}
-
     })
     onMounted(async() => {
       try {
