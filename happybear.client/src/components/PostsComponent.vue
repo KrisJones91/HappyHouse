@@ -59,4 +59,9 @@ export default {
   max-height: 40%;
   max-width: 40%;
 }
+.card{
+  border: 1px solid black;
+  background-color: whitesmoke;
+
+}
 </style>
