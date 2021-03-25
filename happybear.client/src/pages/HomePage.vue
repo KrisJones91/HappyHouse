@@ -64,9 +64,8 @@ export default {
       state,
       async createPost() {
         try {
-          const id = await postsService.createPost(state.newPost)
+          await postsService.createPost(state.newPost)
           state.newPost = {}
-          logger.log(id)
         } catch (error) {
           logger.log(error)
         }
