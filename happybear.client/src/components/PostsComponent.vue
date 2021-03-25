@@ -7,9 +7,14 @@
         </div>
         <div class="col text-left">
           <p class="mt-1">
-            <b>{{ postProp.creator.name }}</b>
+            <b>{{ postProp.title }}</b>
           </p>
           <p>{{ postProp.body }}</p>
+        </div>
+        <div class="col-2 m-1">
+          <button type="button" @click="deletePost">
+            x
+          </button>
         </div>
       </div>
     </div>
@@ -20,7 +25,7 @@
 import { computed, reactive } from '@vue/runtime-core'
 import { AppState } from '../AppState'
 import { postsService } from '../services/PostsService'
-import { useRoute } from 'vue-router'
+// import { useRoute } from 'vue-router'
 import { logger } from '../utils/Logger'
 
 export default {
@@ -29,7 +34,7 @@ export default {
     postProp: { type: Object, required: true }
   },
   setup(props) {
-    const route = useRoute()
+    // const route = useRoute()
     const state = reactive({
       user: computed(() => AppState.user)
     })
@@ -38,7 +43,7 @@ export default {
       account: computed(() => AppState.account),
       async deletePost() {
         try {
-          await postsService.deletePost(route.params.id)
+          await postsService.deletePost(props.postProp._id)
         } catch (error) {
           logger.log(error)
         }

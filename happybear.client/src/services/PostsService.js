@@ -10,13 +10,11 @@ class PostsService {
   async createPost(post) {
     const res = await api.post('api/posts', post)
     AppState.posts.push(res.data)
-    this.getPosts()
-    return res.data
   }
 
-  async deletePost(id) {
-    await api.delete('api/posts/' + id)
-    const postInd = AppState.posts.findIndex(p => p.id === id)
+  async deletePost(_id) {
+    await api.delete('api/posts/' + _id)
+    const postInd = AppState.posts.findIndex(p => p._id === _id)
     AppState.posts.splice(postInd, 1)
   }
 }
