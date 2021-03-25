@@ -19,8 +19,9 @@
 <script>
 import { computed, reactive } from '@vue/runtime-core'
 import { AppState } from '../AppState'
-// import { logger } from '../utils/Logger'
-// import { postsService } from '../services/PostsService'
+import { postsService } from '../services/PostsService'
+import { useRoute } from 'vue-router'
+import { logger } from '../utils/Logger'
 
 export default {
   name: 'PostsComponent',
@@ -28,12 +29,20 @@ export default {
     postProp: { type: Object, required: true }
   },
   setup(props) {
+    const route = useRoute()
     const state = reactive({
       user: computed(() => AppState.user)
     })
     return {
       state,
-      account: computed(() => AppState.account)
+      account: computed(() => AppState.account),
+      async deletePost() {
+        try {
+          await postsService.deletePost(route.params.id)
+        } catch (error) {
+          logger.log(error)
+        }
+      }
     }
   }
 }
