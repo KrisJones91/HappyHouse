@@ -6,9 +6,14 @@
           <img :src="state.user.picture" class="image mt-2" alt="">
         </div>
         <div class="col text-left">
-          <p class="mt-1">
-            <b>{{ postProp.title }}</b>
+          <p class="mt-2">
+            <b>
+              <em> {{ state.user.nickname }} </em>
+            </b>
           </p>
+          <h4 class="text-primary">
+            {{ postProp.title }}
+          </h4>
           <p>{{ postProp.body }}</p>
         </div>
         <div class="col-2 m-1">
@@ -62,6 +67,6 @@ export default {
 .card{
   border: 1px solid rgb(112, 112, 112);
   background-color: rgb(255, 255, 255);
-  background: linear-gradient(#ffffff, #9b9b9b );
+  background: linear-gradient(#ffffff, #bdbdbd );
 }
 </style>

@@ -14,17 +14,17 @@
 
                    id="title"
                    v-model="state.newPost.title"
-                   placeholder="Title..."
+                   placeholder="What makes you happy?"
                    required
             >
             <textarea type="text"
                       class="form-control"
                       id="body"
                       v-model="state.newPost.body"
-                      placeholder="What makes you happy?"
+                      placeholder="Share your story..."
                       required
             />
-            <button type="submit" class="btn btn-outline-primary">
+            <button type="submit" class="btn btn-outline-primary m-1">
               Post
             </button>
           </div>
