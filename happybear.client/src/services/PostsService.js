@@ -1,4 +1,5 @@
 import { AppState } from '../AppState'
+import { logger } from '../utils/Logger'
 import { api } from './AxiosService'
 
 class PostsService {
@@ -10,6 +11,13 @@ class PostsService {
   async createPost(post) {
     const res = await api.post('api/posts', post)
     AppState.posts.push(res.data)
+  }
+
+  async editPost(id, newTitle, newBody) {
+    const eTitle = { title: newTitle }
+    const eBody = { body: newBody }
+    const res = await api.put('api/posts/' + id, eTitle, eBody)
+    logger.log(res)
   }
 
   async deletePost(_id) {
