@@ -82,6 +82,7 @@ export default {
   > img{
     height: 200px;
     width: 200px;
+    image-rendering: pixelated;
   }
 }
 </style>
