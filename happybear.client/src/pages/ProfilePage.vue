@@ -1,12 +1,29 @@
 <template>
-  <div class="profile">
-    <h1> Welcome to the Profile Page </h1>
+  <div class="profile container-fluid">
+    <div class="row justify-content-center">
+      <div class="col text-center">
+        <h1> Profile Page </h1>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import { reactive, computed } from '@vue/reactivity'
+import { AppState } from '../AppState'
+
 export default {
-  name: 'Profile'
+  name: 'Profile',
+  setup() {
+    const state = reactive({
+      user: computed(() => AppState.user),
+      account: computed(() => AppState.account),
+      posts: computed(() => AppState.posts)
+    })
+    return {
+      state
+    }
+  }
 }
 </script>
 
