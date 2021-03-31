@@ -2,7 +2,9 @@
   <div class="home container-fluid">
     <div class="row justify-content-center m-0">
       <div class="col-3 col">
-        <img :src="state.user.picture" class="p-2" alt="">
+        <router-link :to="{ name: 'Account' }">
+          <img :src="state.user.picture" class="p-2" alt="">
+        </router-link>
         <h4>{{ state.user.nickname }}</h4>
         <p>{{ state.user.email }}</p>
       </div>
