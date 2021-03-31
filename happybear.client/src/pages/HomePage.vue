@@ -10,7 +10,7 @@
         <form type="submit" @submit.prevent="createPost()">
           <div class="form-group m-2">
             <input type="text"
-                   class="form-control"
+                   class="form-control iTitle"
 
                    id="title"
                    v-model="state.newPost.title"
@@ -18,7 +18,7 @@
                    required
             >
             <textarea type="text"
-                      class="form-control"
+                      class="form-control iBody"
                       id="body"
                       v-model="state.newPost.body"
                       placeholder="Share your story..."
@@ -84,5 +84,11 @@ export default {
     width: 200px;
     image-rendering: pixelated;
   }
+}
+.iTitle:hover{
+  border: 1px solid blue;
+}
+.iBody:hover{
+  border: 1px solid blue;
 }
 </style>

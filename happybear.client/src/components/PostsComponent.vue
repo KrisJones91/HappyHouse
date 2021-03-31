@@ -8,10 +8,10 @@
         <div class="col text-left">
           <p class="mt-2">
             <b>
-              <em> {{ postProp.creator.name }} </em>
-              <router-link :to="{ name: 'Account' }">
-                <!-- <em class="email"> {{ postProp.creator }} </em> -->
+              <router-link class="text-dark" :to="{ name: 'Account' }">
+                <em> {{ postProp.creator.name }} </em>
               </router-link>
+              <!-- <em class="email"> {{ postProp.creator }} </em> -->
             </b>
           </p>
           <h5 class="text-primary title">
