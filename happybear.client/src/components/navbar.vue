@@ -23,19 +23,19 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item text-white">
-          <router-link :to="{ name: 'Home' }" class="nav-link">
+          <router-link :to="{ name: 'Home' }" class="nav-link text-white">
             Home
           </router-link>
         </li>
         <li class="nav-item text-white">
-          <router-link :to="{ name: 'About' }" class="nav-link">
+          <router-link :to="{ name: 'About' }" class="nav-link text-white">
             About
           </router-link>
         </li>
       </ul>
       <span class="navbar-text">
         <button
-          class="btn btn-outline-primary text-uppercase"
+          class="btn btn-outline-danger text-uppercase"
           @click="login"
           v-if="!user.isAuthenticated"
         >
@@ -53,7 +53,7 @@
               height="40"
               class="rounded"
             />
-            <span class="mx-3">{{ user.name }}</span>
+            <span class="mx-3 text-white">{{ user.name }}</span>
           </div>
           <div
             class="dropdown-menu p-0 list-group w-100"

@@ -12,8 +12,8 @@
           <p>{{ postProp.body }}</p>
         </div>
         <div class="col-2 m-1">
-          <button type="button" @click="deletePost">
-            x
+          <button type="button" class="btn" @click="deletePost">
+            &times;
           </button>
         </div>
       </div>
@@ -60,8 +60,8 @@ export default {
   max-width: 40%;
 }
 .card{
-  border: 1px solid black;
-  background-color: whitesmoke;
-
+  border: 1px solid rgb(112, 112, 112);
+  background-color: rgb(255, 255, 255);
+  background: linear-gradient(#ffffff, #9b9b9b );
 }
 </style>
