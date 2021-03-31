@@ -9,7 +9,9 @@
           <p class="mt-2">
             <b>
               <em> {{ state.user.nickname }} </em>
-              <em class="email"> {{ state.user.email }} </em>
+              <router-link :to="{ name: 'Account' }">
+                <em class="email"> {{ state.user.email }} </em>
+              </router-link>
             </b>
           </p>
           <h5 class="text-primary title">
