@@ -17,7 +17,7 @@
           <p>{{ postProp.body }}</p>
         </div>
         <div class="col-2 m-1">
-          <button type="button" class="btn" @click="deletePost">
+          <button type="button" class="btn x-btn" @click="deletePost">
             &times;
           </button>
         </div>
@@ -67,6 +67,13 @@ export default {
 .card{
   border: 1px solid rgb(112, 112, 112);
   background-color: rgb(255, 255, 255);
-  background: linear-gradient(#ffffff, #bdbdbd );
+  background: linear-gradient(#ffffff, #cacaca );
+}
+.x-btn{
+  color: black;
+}
+.x-btn:hover{
+  color: red;
+  transform: scale(1.4);
 }
 </style>

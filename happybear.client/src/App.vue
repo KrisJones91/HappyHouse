@@ -5,7 +5,7 @@
   <main>
     <router-view />
   </main>
-  <footer>
+  <footer class="mt-1">
     <div class="bg-primary text-light text-center p-2 f-text">
       <small>Make someone's day. Spread the happy, wherever you go.</small>
     </div>
