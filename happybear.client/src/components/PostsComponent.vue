@@ -9,11 +9,12 @@
           <p class="mt-2">
             <b>
               <em> {{ state.user.nickname }} </em>
+              <em class="email"> {{ state.user.email }} </em>
             </b>
           </p>
-          <h4 class="text-primary">
+          <h5 class="text-primary title">
             {{ postProp.title }}
-          </h4>
+          </h5>
           <p><small>{{ postProp.body }}</small></p>
         </div>
         <div class="col-2 m-1">
@@ -69,11 +70,21 @@ export default {
   background-color: rgb(255, 255, 255);
   background: linear-gradient(#ffffff, #e4e4e4 );
 }
+.email{
+  color: #8f8f8f;
+  margin-left: 8%;
+}
+.email:hover{
+  color: blue;
+}
 .x-btn{
   color: black;
+  margin-top: 10px;
+  border: none;
 }
 .x-btn:hover{
   color: red;
   transform: scale(1.4);
+  border: none;
 }
 </style>
