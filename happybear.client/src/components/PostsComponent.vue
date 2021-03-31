@@ -3,14 +3,14 @@
     <div class="col card">
       <div class="row">
         <div class="col-2 text-center pl-0">
-          <img :src="state.user.picture" class="image mt-2" alt="">
+          <img :src="postProp.creator.picture" class="image mt-2" alt="">
         </div>
         <div class="col text-left">
           <p class="mt-2">
             <b>
-              <em> {{ state.user.nickname }} </em>
+              <em> {{ postProp.creator.name }} </em>
               <router-link :to="{ name: 'Account' }">
-                <em class="email"> {{ state.user.email }} </em>
+                <!-- <em class="email"> {{ postProp.creator }} </em> -->
               </router-link>
             </b>
           </p>
@@ -44,11 +44,12 @@ export default {
   setup(props) {
     // const route = useRoute()
     const state = reactive({
-      user: computed(() => AppState.user)
+      account: computed(() => AppState.account),
+      user: computed(() => AppState.user),
+      posts: computed(() => AppState.posts)
     })
     return {
       state,
-      account: computed(() => AppState.account),
       async deletePost() {
         try {
           await postsService.deletePost(props.postProp._id)
