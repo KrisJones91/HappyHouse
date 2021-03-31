@@ -14,7 +14,7 @@
           <h4 class="text-primary">
             {{ postProp.title }}
           </h4>
-          <p>{{ postProp.body }}</p>
+          <p><small>{{ postProp.body }}</small></p>
         </div>
         <div class="col-2 m-1">
           <button type="button" class="btn x-btn" @click="deletePost">
@@ -65,9 +65,9 @@ export default {
   max-width: 40%;
 }
 .card{
-  border: 1px solid rgb(112, 112, 112);
+  border: 1px solid rgb(216, 216, 216);
   background-color: rgb(255, 255, 255);
-  background: linear-gradient(#ffffff, #cacaca );
+  background: linear-gradient(#ffffff, #e4e4e4 );
 }
 .x-btn{
   color: black;
