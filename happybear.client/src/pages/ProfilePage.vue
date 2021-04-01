@@ -3,6 +3,10 @@
     <div class="row justify-content-center">
       <div class="col text-center">
         <h1> Profile Page </h1>
+        <div class="col text-center">
+          <PostsComponent v-for="post in state.posts" :key="post.id" :post-prop="post" />
+        </div>
+        <p>{{ state.posts }}</p>
       </div>
     </div>
   </div>

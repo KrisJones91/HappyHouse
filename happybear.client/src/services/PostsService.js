@@ -8,6 +8,11 @@ class PostsService {
     AppState.posts = res.data
   }
 
+  async getPostsByAccountId(id) {
+    const res = await api.get('/account/' + id + '/posts')
+    AppState.posts = res.data
+  }
+
   async createPost(post) {
     const res = await api.post('api/posts', post)
     AppState.posts.push(res.data)
