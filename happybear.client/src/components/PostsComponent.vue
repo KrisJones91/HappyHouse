@@ -8,7 +8,7 @@
         <div class="col text-left">
           <p class="mt-2">
             <b>
-              <router-link class="text-dark" :to="{ name: 'Profile' }">
+              <router-link class="text-dark" :to="{ name: 'Profile', params:{id: postProp.creatorId} }">
                 <em> {{ postProp.creator.name }} </em>
               </router-link>
               <!-- <em class="email"> {{ postProp.creator }} </em> -->

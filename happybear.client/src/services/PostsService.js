@@ -9,7 +9,7 @@ class PostsService {
   }
 
   async getPostsByAccountId(id) {
-    const res = await api.get('/account/' + id + '/posts')
+    const res = await api.get('api/profiles/' + id + '/posts')
     AppState.posts = res.data
   }
 
