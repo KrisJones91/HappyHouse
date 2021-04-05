@@ -16,14 +16,14 @@
 import { reactive, computed } from '@vue/reactivity'
 import { AppState } from '../AppState'
 import { onMounted } from '@vue/runtime-core'
-// import { postsService } from '../services/PostsService'
-// import { useRoute } from 'vue-router'
-// import { logger } from '../utils/Logger'
+import { postsService } from '../services/PostsService'
+import { useRoute } from 'vue-router'
+import { logger } from '../utils/Logger'
 
 export default {
   name: 'Profile',
   setup() {
-    // const route = useRoute()
+    const route = useRoute()
     const state = reactive({
       user: computed(() => AppState.user),
       account: computed(() => AppState.account),
@@ -31,9 +31,9 @@ export default {
     })
     onMounted(async() => {
       try {
-        // await postsService.getPostsByAccountId(route.params.id)
+        await postsService.getPostsByAccountId(route.params.id)
       } catch (error) {
-        // logger.log(error)
+        logger.log(error)
       }
     })
     return {

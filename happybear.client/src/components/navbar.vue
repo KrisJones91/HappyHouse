@@ -32,6 +32,11 @@
             About
           </router-link>
         </li>
+        <li class="nav-item text-white">
+          <router-link :to="{ name: 'Profile' }" class="nav-link text-white">
+            Profile
+          </router-link>
+        </li>
       </ul>
       <span class="navbar-text">
         <button
