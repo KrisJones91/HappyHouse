@@ -11,7 +11,7 @@
               <router-link class="text-dark" :to="{ name: 'Profile', params:{id: postProp.creatorId} }">
                 <em> {{ postProp.creator.name }} </em>
               </router-link>
-              <!-- <em class="email"> {{ postProp.creator }} </em> -->
+              <small><em class="email"> {{ convertUpdate(postProp.createdAt) }} </em></small>
             </b>
           </p>
           <h5 class="text-primary title">
@@ -23,6 +23,28 @@
           <button type="button" class="btn x-btn" @click="deletePost">
             &times;
           </button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="form">
+            <p>
+              <button class="btn btn-outline-primary"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#collapseE"
+                      aria-expanded="false"
+                      aria-controls="collapseE"
+              >
+                Notes
+              </button>
+            </p>
+            <div class="collapse" id="collapseE">
+              <div class="card card-body">
+                Some
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -56,6 +78,12 @@ export default {
         } catch (error) {
           logger.log(error)
         }
+      },
+      convertUpdate(updatedAt) {
+        const dateYear = updatedAt.slice(0, 4)
+        const dateMonth = updatedAt.slice(5, 7)
+        const dateDay = updatedAt.slice(8, 10)
+        return dateMonth + '/' + dateDay + '/' + dateYear
       }
     }
   }
@@ -90,4 +118,5 @@ export default {
   transform: scale(1.4);
   border: none;
 }
+
 </style>

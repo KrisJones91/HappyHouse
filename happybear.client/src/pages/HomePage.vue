@@ -7,6 +7,9 @@
         </router-link>
         <h4>{{ state.user.nickname }}</h4>
         <p>{{ state.user.email }}</p>
+        <!-- <div class="card text-center" v-if="state.posts">
+          <p>posts: {{ state.posts }}</p>
+        </div> -->
       </div>
       <div class="col-11 col-md-6 mt-4">
         <form type="submit" @submit.prevent="createPost()">
