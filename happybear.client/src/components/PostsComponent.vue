@@ -25,26 +25,27 @@
           </button>
         </div>
       </div>
-      <div class="row">
-        <div class="col">
-          <div class="form">
-            <p>
-              <button class="btn btn-outline-primary"
-                      type="button"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseE"
-                      aria-expanded="false"
-                      aria-controls="collapseE"
+      <div class="row justify-content-center">
+        <div class=" col card">
+          <form type="submit" @submit.prevent="createComment()">
+            <div class="form-group m-2">
+              <input type="text"
+                     class="form-control"
+                     id="body"
+                     v-model="state.newComment.body"
+                     placeholder="Comment..."
+                     required
               >
-                Notes
-              </button>
-            </p>
-            <div class="collapse" id="collapseE">
-              <div class="card card-body">
-                Some
-              </div>
             </div>
-          </div>
+            <button type="submit" class="btn btn-outline-primary m-1">
+              Comment
+            </button>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col card">
+          <CommentsComponent v-for="comment in state.comments" :key="comment.id" :comment-prop="comment" />
         </div>
       </div>
     </div>
@@ -52,10 +53,11 @@
 </template>
 
 <script>
-import { computed, reactive } from '@vue/runtime-core'
+import { computed, onMounted, reactive } from '@vue/runtime-core'
 import { AppState } from '../AppState'
 import { postsService } from '../services/PostsService'
 // import { useRoute } from 'vue-router'
+import { commentsService } from '../services/CommentsService'
 import { logger } from '../utils/Logger'
 
 export default {
@@ -68,10 +70,29 @@ export default {
     const state = reactive({
       account: computed(() => AppState.account),
       user: computed(() => AppState.user),
-      posts: computed(() => AppState.posts)
+      posts: computed(() => AppState.posts),
+      // looks into own individual array
+      comments: computed(() => AppState.comments[props.postProp.id]),
+      newComment: { postId: props.postProp._id }
+    })
+    onMounted(async() => {
+      try {
+        await commentsService.getComments(props.postProp._id)
+      } catch (error) {
+        logger.log(error)
+      }
     })
     return {
       state,
+      async createComment() {
+        try {
+          await commentsService.createComment(state.newComment)
+          state.newComment = { postId: props.postProp._id }
+          this.getComments()
+        } catch (error) {
+          logger.log(error)
+        }
+      },
       async deletePost() {
         try {
           await postsService.deletePost(props.postProp._id)
@@ -105,9 +126,7 @@ export default {
   color: #8f8f8f;
   margin-left: 8%;
 }
-.email:hover{
-  color: blue;
-}
+
 .x-btn{
   color: black;
   margin-top: 10px;
