@@ -1,6 +1,6 @@
 <template>
   <div class="posts-component row justify-content-center">
-    <div class="col card">
+    <div class="col card m-2">
       <div class="row">
         <div class="col-2 text-center pl-0">
           <img :src="postProp.creator.picture" class="image mt-2" alt="">
@@ -26,7 +26,7 @@
         </div>
       </div>
       <div class="row justify-content-center">
-        <div class=" col card">
+        <div class=" col card Icomment-card">
           <form type="submit" @submit.prevent="createComment()">
             <div class="form-group m-2">
               <input type="text"
@@ -137,5 +137,7 @@ export default {
   transform: scale(1.4);
   border: none;
 }
-
+.Icomment-card{
+border: none;
+}
 </style>

@@ -6,7 +6,7 @@
         <div class="col text-center">
           <PostsComponent v-for="post in state.posts" :key="post.id" :post-prop="post" />
         </div>
-        <p>{{ state.posts }}</p>
+        <!-- <p>{{ state.posts }}</p> -->
       </div>
     </div>
   </div>
