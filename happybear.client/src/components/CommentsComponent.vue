@@ -9,6 +9,8 @@
 <script>
 import { reactive, computed } from '@vue/reactivity'
 import { AppState } from '../AppState'
+import { commentsService } from '../services/CommentsService'
+import { logger } from '../utils/Logger'
 
 export default {
   name: 'CommentsComponent',
@@ -23,7 +25,14 @@ export default {
       comments: computed(() => AppState.comments)
     })
     return {
-      state
+      state,
+      async deleteComment() {
+        try {
+          await commentsService.deleteComment(props.commentProp.id)
+        } catch (error) {
+          logger.log(error)
+        }
+      }
     }
   }
 }
