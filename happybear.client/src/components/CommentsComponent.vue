@@ -1,8 +1,19 @@
 <template>
   <div class="comments-component">
-    <div class="row card">
-      <p><small>{{ commentProp.body }}</small></p>
+    <div class="row commentrow">
+      <div class="col-4 text-right">
+        <p>{{ commentProp.creator.name }}</p>
+      </div>
+      <div class="col-8 text-left">
+        <p><small>{{ commentProp.body }}</small></p>
+      </div>
     </div>
+    <!-- <div class="col-6">
+        <button type="button" class="btn x-btn" @click="deleteComment">
+          &times;
+        </button>
+      </div>
+    </div> -->
   </div>
 </template>
 
@@ -39,5 +50,7 @@ export default {
 </script>
 
 <style>
-
+.commentrow{
+  border: solid 1px black;
+}
 </style>

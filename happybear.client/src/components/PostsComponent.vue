@@ -26,7 +26,7 @@
         </div>
       </div>
       <div class="row justify-content-center">
-        <div class=" col card Icomment-card">
+        <!-- <div class=" col card Icomment-card">
           <form type="submit" @submit.prevent="createComment()">
             <div class="form-group m-2">
               <input type="text"
@@ -41,13 +41,17 @@
               Comment
             </button>
           </form>
+        </div> -->
+      </div>
+      <div class="row num-box">
+        <div class="col-4 ">
+          <i class="far fa-comments text-white"></i>
+          <p class="text-white">
+            <small>{{ state.comments.length }}</small>
+          </p>
         </div>
       </div>
-      <div class="row">
-        <div class="col card">
-          <CommentsComponent v-for="comment in state.comments" :key="comment.id" :comment-prop="comment" />
-        </div>
-      </div>
+      <!-- <CommentsComponent v-for="comment in state.comments" :key="comment.id" :comment-prop="comment" /> -->
     </div>
   </div>
 </template>
@@ -84,15 +88,15 @@ export default {
     })
     return {
       state,
-      async createComment() {
-        try {
-          await commentsService.createComment(state.newComment)
-          state.newComment = { postId: props.postProp._id }
-          this.getComments()
-        } catch (error) {
-          logger.log(error)
-        }
-      },
+      // async createComment() {
+      //   try {
+      //     await commentsService.createComment(state.newComment)
+      //     state.newComment = { postId: props.postProp._id }
+      //     this.getComments()
+      //   } catch (error) {
+      //     logger.log(error)
+      //   }
+      // },
       async deletePost() {
         try {
           await postsService.deletePost(props.postProp._id)
@@ -139,5 +143,9 @@ export default {
 }
 .Icomment-card{
 border: none;
+}
+.num-box{
+  border: solid 1px gray;
+  background: linear-gradient(#eec998, #ce7815 );;
 }
 </style>
