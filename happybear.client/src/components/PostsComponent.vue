@@ -15,7 +15,9 @@
             </b>
           </p>
           <h5 class="text-primary title">
-            {{ postProp.title }}
+            <router-link :to="{name: 'Post', params: {id: postProp.id}}">
+              {{ postProp.title }}
+            </router-link>
           </h5>
           <p><small>{{ postProp.body }}</small></p>
         </div>
@@ -47,7 +49,7 @@
         <div class="col-4 text-right">
           <i class="far fa-comments text-black p-0"></i>
           <p class="text-black pt-0">
-            <small>{{ state.comments.length }}</small>
+            <!-- <small>{{ state.comments.length }}</small> -->
           </p>
         </div>
         <div class="col-4">

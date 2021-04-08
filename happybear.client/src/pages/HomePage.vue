@@ -97,6 +97,6 @@ export default {
   border: 1px solid #e2871f;
 }
 .profImage{
-  border: #ec8c1f solid 4px;
+  border:inset #ec8c1f 2px;
 }
 </style>
