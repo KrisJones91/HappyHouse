@@ -1,5 +1,5 @@
 <template>
-  <div class="PostPage container-fluid">
+  <div class="post container-fluid">
     <div class="row">
       <div class="col">
         <h1>Post Page</h1>
@@ -15,7 +15,7 @@ import { logger } from '../utils/Logger'
 import { postsService } from '../services/PostsService'
 import { useRoute } from 'vue-router'
 export default {
-  name: 'PostPage',
+  name: 'Post',
   setup() {
     const route = useRoute()
     const state = reactive({

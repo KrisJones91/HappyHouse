@@ -22,6 +22,11 @@ const routes = [
     component: loadPage('ProfilePage')
   },
   {
+    path: '/post/:id',
+    name: 'Post',
+    component: loadPage('Post')
+  },
+  {
     path: '/account',
     name: 'Account',
     component: loadPage('AccountPage'),

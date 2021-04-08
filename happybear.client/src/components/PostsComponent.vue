@@ -44,11 +44,19 @@
         </div> -->
       </div>
       <div class="row num-box">
-        <div class="col-4 ">
-          <i class="far fa-comments text-white"></i>
-          <p class="text-white">
+        <div class="col-4 text-right">
+          <i class="far fa-comments text-black p-0"></i>
+          <p class="text-black pt-0">
             <small>{{ state.comments.length }}</small>
           </p>
+        </div>
+        <div class="col-4">
+          <i class="far fa-smile"></i>
+          <p>{{ postProp.likes }}</p>
+        </div>
+        <div class="col-4 text-left">
+          <i class="far fa-bookmark"></i>
+          <p>{{ postProp.saves }}</p>
         </div>
       </div>
       <!-- <CommentsComponent v-for="comment in state.comments" :key="comment.id" :comment-prop="comment" /> -->
@@ -146,6 +154,7 @@ border: none;
 }
 .num-box{
   border: solid 1px gray;
-  background: linear-gradient(#eec998, #ce7815 );;
+  background: linear-gradient(#fac37a, #ec8c1f );;
+  height: 50px;
 }
 </style>

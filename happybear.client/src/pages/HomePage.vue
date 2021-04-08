@@ -3,7 +3,7 @@
     <div class="row justify-content-center m-0">
       <div class="col-3 col">
         <router-link :to="{ name: 'Account' }">
-          <img :src="state.user.picture" class="p-2" alt="">
+          <img :src="state.user.picture" class="profImage p-0 mt-2" alt="">
         </router-link>
         <h4>{{ state.user.nickname }}</h4>
         <p>{{ state.user.email }}</p>
@@ -91,9 +91,12 @@ export default {
   }
 }
 .iTitle:hover{
-  border: 1px solid blue;
+  border: 1px solid #e2871f;
 }
 .iBody:hover{
-  border: 1px solid blue;
+  border: 1px solid #e2871f;
+}
+.profImage{
+  border: #ec8c1f solid 4px;
 }
 </style>
