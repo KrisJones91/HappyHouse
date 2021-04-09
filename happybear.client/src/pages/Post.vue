@@ -2,7 +2,7 @@
   <div class="post container-fluid">
     <div class="row">
       <div class="col">
-        <h1>Post Page</h1>
+        <p>{{ state.activePost }}</p>
       </div>
     </div>
   </div>
@@ -19,7 +19,8 @@ export default {
   setup() {
     const route = useRoute()
     const state = reactive({
-      account: computed(() => AppState.account)
+      account: computed(() => AppState.account),
+      activePost: computed(() => AppState.activePost)
     })
     onMounted(async() => {
       try {

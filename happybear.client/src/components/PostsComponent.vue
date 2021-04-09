@@ -15,7 +15,7 @@
             </b>
           </p>
           <h5 class="text-primary title">
-            <router-link :to="{name: 'Post', params: {id: postProp.id}}">
+            <router-link :to="`/post/${postProp.id}`">
               {{ postProp.title }}
             </router-link>
           </h5>
