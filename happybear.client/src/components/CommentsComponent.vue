@@ -1,13 +1,15 @@
 <template>
-  <div class="comments-component commentrow">
-    <div class="row justify-content-center">
-      <div class="col text-center">
-        <p>{{ commentProp.creator.name }}</p>
+  <div class="comments-component">
+    <div class="row card">
+      <div class="row justify-content-center">
+        <div class="col text-center">
+          <p>{{ commentProp.creator.name }}</p>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col text-center">
-        <p><small>{{ commentProp.body }}</small></p>
+      <div class="row">
+        <div class="col text-center">
+          <p><small>{{ commentProp.body }}</small></p>
+        </div>
       </div>
     </div>
     <!-- <div class="col-6">
@@ -53,6 +55,6 @@ export default {
 
 <style>
 .commentrow{
-  border: solid 1px black;
+  border: solid 1px rgb(236, 235, 235);
 }
 </style>
