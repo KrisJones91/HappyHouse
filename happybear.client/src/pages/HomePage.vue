@@ -7,9 +7,6 @@
         </router-link>
         <h4>{{ state.user.nickname }}</h4>
         <p>{{ state.user.email }}</p>
-        <!-- <div class="card text-center" v-if="state.posts">
-          <p>posts: {{ state.posts }}</p>
-        </div> -->
       </div>
       <div class="col-11 col-md-6 mt-4">
         <form type="submit" @submit.prevent="createPost()">
@@ -71,6 +68,7 @@ export default {
         try {
           await postsService.createPost(state.newPost)
           state.newPost = {}
+          await postsService.getPosts()
         } catch (error) {
           logger.log(error)
         }
@@ -96,7 +94,7 @@ export default {
 .iBody:hover{
   border: 1px solid #e2871f;
 }
-.profImage{
-  border:inset #ec8c1f 2px;
-}
+// .profImage{
+//   border:inset #ec8c1f 2px;
+// }
 </style>

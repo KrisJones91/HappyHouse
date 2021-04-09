@@ -1,10 +1,12 @@
 <template>
-  <div class="comments-component">
-    <div class="row commentrow">
-      <div class="col-4 text-right">
+  <div class="comments-component commentrow">
+    <div class="row justify-content-center">
+      <div class="col text-center">
         <p>{{ commentProp.creator.name }}</p>
       </div>
-      <div class="col-8 text-left">
+    </div>
+    <div class="row">
+      <div class="col text-center">
         <p><small>{{ commentProp.body }}</small></p>
       </div>
     </div>
