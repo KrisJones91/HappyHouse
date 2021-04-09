@@ -3,7 +3,7 @@
     <div class="col card m-2">
       <div class="row">
         <div class="col-2 text-center pl-0">
-          <img :src="postProp.creator.picture" class="image mt-2" alt="user picture">
+          <!-- <img :src="postProp.creator.picture" class="image mt-2" alt="user picture"> -->
         </div>
         <div class="col text-left">
           <p class="mt-2">
@@ -45,7 +45,7 @@
       </div>
     </div>
   </div>
-  <!-- <p>{{ state.posts.creator }}</p> -->
+  <!-- <p>{{ state.posts }}</p> -->
 </template>
 
 <script>

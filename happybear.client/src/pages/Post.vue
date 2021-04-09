@@ -1,32 +1,37 @@
 <template>
   <div class="post container-fluid">
-    <div class="row justify-content-center">
-      <div class="col-6 card text-center m-5">
-        <h3>{{ state.activePost.title }}</h3>
-        <p>{{ state.activePost.body }}</p>
-        <div class="row justify-content-center">
-          <div class=" col card Icomment-card">
-            <form type="submit" @submit.prevent="createComment">
-              <div class="form-group m-2">
-                <input type="text"
-                       class="form-control"
-                       id="body"
-                       v-model="state.newComment.body"
-                       placeholder="Comment..."
-                       required
-                >
-              </div>
-              <button type="submit" class="btn btn-outline-primary m-1">
-                Comment
-              </button>
-            </form>
+    <div class="row mt-4">
+      <div class="col">
+        <div class="card">
+          <div class="text-center">
+            <h3>{{ state.activePost.title }}</h3>
+          </div>
+          <div class="card-body text-center">
+            <p>{{ state.activePost.creator.name }}</p>
+          </div>
+          <div class="row justify-content-center">
+            <p>{{ state.activePost.body }}</p>
           </div>
         </div>
-        <div class="row">
-          <div class="col">
-            <CommentsComponent v-for="comment in state.comments" :key="comment.id" :comment-prop="comment" />
-          </div>
+        <div class="card text-center Icomment-card">
+          <form type="submit" @submit.prevent="createComment">
+            <div class="form-group m-2">
+              <input type="text"
+                     class="form-control"
+                     id="body"
+                     v-model="state.newComment.body"
+                     placeholder="Comment..."
+                     required
+              >
+            </div>
+            <button type="submit" class="btn btn-outline-primary m-1">
+              Comment
+            </button>
+          </form>
         </div>
+      </div>
+      <div class="col main">
+        <CommentsComponent v-for="comment in state.comments" :key="comment.id" :comment-prop="comment" />
       </div>
     </div>
   </div>
@@ -75,5 +80,12 @@ export default {
 </script>
 
 <style>
+.Icomment-card{
+  border: none;
 
+}
+.main{
+  max-height: 400px;
+  overflow-y: auto;
+}
 </style>

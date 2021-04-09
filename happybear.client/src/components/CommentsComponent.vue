@@ -1,23 +1,20 @@
 <template>
   <div class="comments-component">
-    <div class="row card">
+    <div class="card">
       <div class="row justify-content-center">
-        <div class="col text-center">
-          <p>{{ commentProp.creator.name }}</p>
+        <div class="col-8 mt-4 text-center">
+          <p><small>{{ commentProp.creator.name }}</small></p>
+        </div>
+        <div class=" col-2 text-right">
+          <button type="button" class="btn x-btn" @click="deleteComment()">
+            &times;
+          </button>
         </div>
       </div>
-      <div class="row">
-        <div class="col text-center">
-          <p><small>{{ commentProp.body }}</small></p>
-        </div>
+      <div class="row justify-content-center">
+        <p><small>{{ commentProp.body }}</small></p>
       </div>
     </div>
-    <!-- <div class="col-6">
-        <button type="button" class="btn x-btn" @click="deleteComment">
-          &times;
-        </button>
-      </div>
-    </div> -->
   </div>
 </template>
 
@@ -44,6 +41,7 @@ export default {
       async deleteComment() {
         try {
           await commentsService.deleteComment(props.commentProp.id)
+          await commentsService.getComments(props.commentProp.id)
         } catch (error) {
           logger.log(error)
         }
@@ -56,5 +54,11 @@ export default {
 <style>
 .commentrow{
   border: solid 1px rgb(236, 235, 235);
+}
+.card{
+      border: 10px ridge grey;
+    overflow-y: auto;
+    /* border-radius: 5%; */
+
 }
 </style>
