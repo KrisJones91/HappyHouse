@@ -33,8 +33,8 @@
         </form>
         <PostsComponent v-for="post in state.posts" :key="post.id" :post-prop="post" />
       </div>
-      <div class="col-3 col-md-3">
-        <h4>Notifications</h4>
+      <div class="col-3 col-md-3 mt-2">
+        <h4>Saved Posts</h4>
       </div>
     </div>
   </div>
@@ -94,7 +94,7 @@ export default {
 .iBody:hover{
   border: 1px solid #e2871f;
 }
-// .profImage{
-//   border:inset #ec8c1f 2px;
-// }
+.profImage{
+  border-radius: 50%;
+}
 </style>

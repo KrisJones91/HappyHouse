@@ -2,17 +2,19 @@
   <div class="comments-component">
     <div class="card">
       <div class="row justify-content-center">
-        <div class="col-8 mt-4 text-center">
+        <div class="col-8 mt-4 text-right">
           <p><small>{{ commentProp.creator.name }}</small></p>
         </div>
-        <div class=" col-2 text-right">
+        <div class=" col-2 float-right">
           <button type="button" class="btn x-btn" @click="deleteComment()">
             &times;
           </button>
         </div>
       </div>
-      <div class="row justify-content-center">
-        <p><small>{{ commentProp.body }}</small></p>
+      <div class="row card justify-content-center m-2 pt-1">
+        <div class="col text-center">
+          <p><small>{{ commentProp.body }}</small></p>
+        </div>
       </div>
     </div>
   </div>
@@ -55,10 +57,5 @@ export default {
 .commentrow{
   border: solid 1px rgb(236, 235, 235);
 }
-.card{
-      border: 10px ridge grey;
-    overflow-y: auto;
-    /* border-radius: 5%; */
 
-}
 </style>

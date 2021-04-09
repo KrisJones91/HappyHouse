@@ -3,7 +3,7 @@
     <div class="col card m-2">
       <div class="row">
         <div class="col-2 text-center pl-0">
-          <!-- <img :src="postProp.creator.picture" class="image mt-2" alt="user picture"> -->
+          <img :src="postProp.creator.picture" class="image mt-2" alt="user picture">
         </div>
         <div class="col text-left">
           <p class="mt-2">
@@ -124,7 +124,7 @@ export default {
   border: none;
 }
 .num-box{
-  border: solid 1px gray;
+  border: solid 1px rgb(179, 179, 179);
   background: linear-gradient(#fac37a, #ec8c1f );;
   height: 50px;
 }

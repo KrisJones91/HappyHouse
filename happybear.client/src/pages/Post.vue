@@ -85,7 +85,10 @@ export default {
 
 }
 .main{
-  max-height: 400px;
+  max-height: 480px;
   overflow-y: auto;
+  background-color: gray;
+  border-radius: 2%;
+  margin: 2%;
 }
 </style>
