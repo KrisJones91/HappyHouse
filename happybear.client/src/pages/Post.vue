@@ -6,7 +6,7 @@
           <div class="text-center">
             <h3>{{ state.activePost.title }}</h3>
           </div>
-          <div class="card-body text-center">
+          <div class="card-body text-center" v-if="state.activePost.creator">
             <p>{{ state.activePost.creator.name }}</p>
           </div>
           <div class="row justify-content-center">

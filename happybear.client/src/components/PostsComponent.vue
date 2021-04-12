@@ -3,13 +3,13 @@
     <div class="col card m-2">
       <div class="row">
         <div class="col-2 text-center pl-0">
-          <img :src="postProp.creator.picture" class="image mt-2" alt="user picture">
+          <img :src="postProp.creator.picture" class="image mt-2" alt="user picture" v-if="postProp.creator">
         </div>
-        <div class="col text-left">
+        <div class="col text-left ">
           <p class="mt-2">
             <b>
               <router-link class="text-dark" :to="{ name: 'Profile', params:{id: postProp.creatorId} }">
-                <em> {{ postProp.creator.name }} </em>
+                <em v-if="postProp.creator"> {{ postProp.creator.name }} </em>
               </router-link>
               <small><em class="email"> {{ convertUpdate(postProp.createdAt) }} </em></small>
             </b>
