@@ -12,7 +12,7 @@
         <form type="submit" @submit.prevent="createPost()">
           <div class="form-group m-2">
             <input type="text"
-                   class="form-control iTitle"
+                   class="form-control iTitle mb-1"
 
                    id="title"
                    v-model="state.newPost.title"
